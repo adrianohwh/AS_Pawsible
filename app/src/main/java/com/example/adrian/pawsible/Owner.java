@@ -54,5 +54,21 @@ public class Owner {
         this.postalCode = postalCode;
     }
 
-    public void addDog(){}
+    public void addDog(Dog dog){
+        if (dogs.contains(dog)) {
+            System.out.println("Dog already exists");   //Need to show on UI next time
+            return;
+        }
+
+        dogs.add(dog);
+
+    }
+
+    public void removeDog(Dog dog){
+        if (!dogs.contains(dog)) {
+            System.out.println("Dog does not exist");
+            return;
+        }
+        dogs.remove(dog);
+    }
 }

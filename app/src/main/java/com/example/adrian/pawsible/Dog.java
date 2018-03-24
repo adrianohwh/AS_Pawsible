@@ -39,8 +39,8 @@ public class Dog {
         this.breed = breed;
     }
 
-    public void StartSession(){
-        session = new Session(this);
+    public void StartSession(int year, int month, int day){
+        session = new Session(this, year, month, day);
         session.StartSession();
     }
 

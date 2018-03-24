@@ -17,6 +17,7 @@ public class Owner {
     private int postalCode;
     private ArrayList<Dog> dogs;
     private ArrayList<Session> sessionTracker;
+    private ArrayList<Invoice> invoices;
 
     public Owner(String name, String contact, String address, int postalCode) {
         this.name = name;
@@ -29,20 +30,46 @@ public class Owner {
 
     public void AddSession(Session session){
         sessionTracker.add(session);
+        CheckSessions();
     }
 
-    public List<Session> GetSessionsByDog(Dog dog){
-        List<Session> tempSessions = new ArrayList<Session>();
+    public void CheckSessions() {
+        ArrayList<Session> unpaid = new ArrayList<Session>();
         for (int i = 0; i < sessionTracker.size(); i++){
+            if (sessionTracker.get(i).getStatus() == Session.SESSIONSTATUS.UNPAID){
+                unpaid.add(sessionTracker.get(i));
+            }
+        }
+
+        if (unpaid.size() == 10){
+            for (int i = 0; i < unpaid.size(); i++){
+                unpaid.get(i).InvoiceSent();
+            }
+            //Send invoice
+            invoices.add(new Invoice(unpaid));
+        }
+    }
+
+    public List<Session> GetSessionsByDog(Dog dog) {
+        List<Session> tempSessions = new ArrayList<Session>();
+        for (int i = 0; i < sessionTracker.size(); i++) {
             if (sessionTracker.get(i).getDog() == dog) {
                 tempSessions.add(sessionTracker.get(i)); //add specific session to temp session shown under owner > dog
+            }
         }
         return tempSessions;
     }
 
     public List<Session> GetSessionsByDate(int fromYear, int fromMonth, int toYear, int toMonth){
+        List<Session> tempSessions = new ArrayList<Session>();
         Date fromDay = new Date(fromYear, fromMonth,  0);
         Date toDay = new Date(toYear, toMonth, 31);
+
+        for (int i = 0; i < sessionTracker.size(); i++){
+            if (sessionTracker.get(i).getDate().after(fromDay) && sessionTracker.get(i).getDate().before(toDay))
+                tempSessions.add(sessionTracker.get(i));
+        }
+        return tempSessions;
     }
 
     public String getName(){

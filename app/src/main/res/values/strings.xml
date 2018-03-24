@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Pawsible</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_mainMenu">Main Menu</string>
+    <string name="menu_Schedule">Schedule</string>
+    <string name="menu_Dogs">Dogs</string>
+    <string name="title_activity_dogs_page">DogsPage</string>
+    <string name="title_activity_schedule">schedule</string>
+</resources>

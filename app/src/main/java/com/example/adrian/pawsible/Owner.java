@@ -1,6 +1,9 @@
 package com.example.adrian.pawsible;
 
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,13 +16,33 @@ public class Owner {
     private String address;
     private int postalCode;
     private ArrayList<Dog> dogs;
+    private ArrayList<Session> sessionTracker;
 
     public Owner(String name, String contact, String address, int postalCode) {
         this.name = name;
         this.contact = contact;
         this.address = address;
         this.postalCode = postalCode;
+        sessionTracker = new ArrayList<Session>();
         dogs = new ArrayList<Dog>();
+    }
+
+    public void AddSession(Session session){
+        sessionTracker.add(session);
+    }
+
+    public List<Session> GetSessionsByDog(Dog dog){
+        List<Session> tempSessions = new ArrayList<Session>();
+        for (int i = 0; i < sessionTracker.size(); i++){
+            if (sessionTracker.get(i).getDog() == dog) {
+                tempSessions.add(sessionTracker.get(i)); //add specific session to temp session shown under owner > dog
+        }
+        return tempSessions;
+    }
+
+    public List<Session> GetSessionsByDate(int fromYear, int fromMonth, int toYear, int toMonth){
+        Date fromDay = new Date(fromYear, fromMonth,  0);
+        Date toDay = new Date(toYear, toMonth, 31);
     }
 
     public String getName(){

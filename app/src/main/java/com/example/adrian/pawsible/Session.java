@@ -11,12 +11,12 @@ import java.util.Date;
 public class Session {
     private Dog dog;
     private Owner owner;
-    private CalendarDay date;
+    private Date date;
 
     public Session(Dog dog, int year, int month, int day){
         this.dog = dog;
         this.owner = dog.GetOwner();
-        date = CalendarDay.from(year, month, day);
+        date = new Date(year, month, day);
     }
 
     public void StartSession(){
@@ -26,4 +26,9 @@ public class Session {
     public void EndSession(){
 
     }
+
+    public Dog getDog(){
+        return dog;
+    }
 }
+

@@ -42,6 +42,7 @@ public class Dog {
     public void StartSession(int year, int month, int day){
         session = new Session(this, year, month, day);
         session.StartSession();
+        owner.AddSession(session);
     }
 
     public void EndSession(){

@@ -53,4 +53,6 @@ public class Owner {
     public void setPostalCode(int postalCode){
         this.postalCode = postalCode;
     }
+
+    public void addDog(){}
 }

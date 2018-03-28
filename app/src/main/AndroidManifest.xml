@@ -20,10 +20,14 @@
         </activity>
         <activity android:name=".dogs" />
         <activity
-            android:name=".schedule"
+            android:name=".Schedules"
             android:label="@string/title_activity_schedule"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Schedules"></activity>
+
+        <activity
+            android:name=".Test"
+            android:label="test"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

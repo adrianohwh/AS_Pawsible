@@ -14,10 +14,10 @@ public class MainActivity extends AppCompatActivity {
 
     public Button dogs_Btn;
     public Button schedule_Btn;
+    public Button test_Btn;
 
     public void Init(){
         dogs_Btn = (Button)findViewById(R.id.dogs_Btn);
-
         dogs_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -30,6 +30,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, Schedules.class));
+            }
+        });
+
+        test_Btn = (Button)findViewById(R.id.test_Btn);
+        test_Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Test.class));
             }
         });
     }

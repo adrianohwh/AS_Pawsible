@@ -121,4 +121,12 @@ public class Owner {
         }
         dogs.remove(dog);
     }
+
+    public String toString(){
+        String allDogs = "Dogs: ";
+        for (int i = 0; i< dogs.size(); i++){
+            allDogs+= " " + dogs.get(i).GetName();
+        }
+        return name +" " + contact + " " + address + " " + postalCode + " " + allDogs;
+    }
 }

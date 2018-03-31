@@ -28,6 +28,11 @@
             android:name=".Test"
             android:label="test"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".dogtest"
+            android:label="dogtest"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     public Button dogs_Btn;
     public Button schedule_Btn;
     public Button test_Btn;
+    public Button dogtest_Btn;
 
     public void Init(){
         dogs_Btn = (Button)findViewById(R.id.dogs_Btn);
@@ -38,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, Test.class));
+            }
+        });
+
+        dogtest_Btn = (Button)findViewById(R.id.dogtest_btn);
+        dogtest_Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, dogtest.class));
             }
         });
     }

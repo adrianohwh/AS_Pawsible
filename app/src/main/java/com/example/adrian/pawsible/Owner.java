@@ -14,16 +14,16 @@ public class Owner {
     private String name;
     private String contact;
     private String address;
-    private int postalCode;
+    private int photo;
     private ArrayList<Dog> dogs;
     private ArrayList<Session> sessionTracker;
     private ArrayList<Invoice> invoices;
 
-    public Owner(String name, String contact, String address, int postalCode) {
+    public Owner(String name, String contact, String address, int photo) {
         this.name = name;
         this.contact = contact;
         this.address = address;
-        this.postalCode = postalCode;
+        this.photo = photo;
         sessionTracker = new ArrayList<Session>();
         dogs = new ArrayList<Dog>();
     }
@@ -96,12 +96,12 @@ public class Owner {
         this.address = address;
     }
 
-    public int getPostalCode(){
-        return postalCode;
+    public int getPhoto(){
+        return photo;
     }
 
-    public void setPostalCode(int postalCode){
-        this.postalCode = postalCode;
+    public void setPhoto(int photo){
+        this.photo = photo;
     }
 
     public void addDog(Dog dog){
@@ -122,11 +122,15 @@ public class Owner {
         dogs.remove(dog);
     }
 
+    public ArrayList<Dog> getDogs() {
+        return dogs;
+    }
+
     public String toString(){
         String allDogs = "Dogs: ";
         for (int i = 0; i< dogs.size(); i++){
             allDogs+= " " + dogs.get(i).GetName();
         }
-        return name +" " + contact + " " + address + " " + postalCode + " " + allDogs;
+        return name +" " + contact + " " + address + " " + photo + " " + allDogs;
     }
 }

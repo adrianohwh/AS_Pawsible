@@ -15,7 +15,7 @@ public class Test extends AppCompatActivity {
     public EditText ownername;
     public EditText contact;
     public EditText address;
-    public EditText postal;
+    public EditText photo;
     public Button addOwner_btn;
     public Owner testowner;
     public TextView viewOwner;
@@ -24,7 +24,7 @@ public class Test extends AppCompatActivity {
         ownername = (EditText) findViewById(R.id.dogName);
         contact = (EditText) findViewById(R.id.Contact);
         address = (EditText) findViewById(R.id.Address);
-        postal = (EditText) findViewById(R.id.Postal);
+        photo = (EditText) findViewById(R.id.photo);
         addOwner_btn = (Button)findViewById(R.id.addOwner_btn);
         viewOwner = (TextView) findViewById(R.id.allDetails) ;
 
@@ -52,18 +52,18 @@ public class Test extends AppCompatActivity {
             }
         });
 
-        postal.setOnClickListener(new View.OnClickListener() {
+        photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                postal.setText(null);
-                postal.setHint("Postal");
+                photo.setText(null);
+                photo.setHint("photo");
             }
         });
 
         addOwner_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                testowner = new Owner(ownername.getText().toString(), contact.getText().toString(), address.getText().toString(), Integer.parseInt(postal.getText().toString()));
+                testowner = new Owner(ownername.getText().toString(), contact.getText().toString(), address.getText().toString(), Integer.parseInt(photo.getText().toString()));
                 viewOwner.setText(testowner.toString());
             }
         });

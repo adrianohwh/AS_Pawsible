@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         ownerList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, Test.class));
+                startActivity(new Intent(MainActivity.this, OwnerList.class));
             }
         });
 

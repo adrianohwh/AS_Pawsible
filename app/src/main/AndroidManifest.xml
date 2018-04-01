@@ -33,6 +33,11 @@
             android:name=".dogtest"
             android:label="dogtest"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".OwnerList"
+            android:label="ownerList"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

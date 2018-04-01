@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -12,38 +13,38 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    public Button dogs_Btn;
-    public Button schedule_Btn;
-    public Button test_Btn;
-    public Button dogtest_Btn;
+    public CardView ownerList;
+    public CardView dogList;
+    public CardView calendView;
+    public CardView invoiceView;
 
     public void Init(){
-        dogs_Btn = (Button)findViewById(R.id.dogs_Btn);
-        dogs_Btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, dogs.class));
-            }
-        });
-
-        schedule_Btn = (Button)findViewById(R.id.schedule_Btn);
-        schedule_Btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, Schedules.class));
-            }
-        });
-
-        test_Btn = (Button)findViewById(R.id.test_Btn);
-        test_Btn.setOnClickListener(new View.OnClickListener() {
+        ownerList = (CardView) findViewById(R.id.ownerList);
+        ownerList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, Test.class));
             }
         });
 
-        dogtest_Btn = (Button)findViewById(R.id.dogtest_btn);
-        dogtest_Btn.setOnClickListener(new View.OnClickListener() {
+        dogList = (CardView) findViewById(R.id.dogList);
+        dogList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, dogtest.class));
+            }
+        });
+
+        calendView = (CardView)findViewById(R.id.calendView);
+        calendView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Schedules.class));
+            }
+        });
+
+        invoiceView = (CardView)findViewById(R.id.invoiceView);
+        invoiceView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, dogtest.class));

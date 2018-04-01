@@ -15,9 +15,13 @@ public class owner_item extends Fragment {
 
     View callOwner;
     private RecyclerView recyclerView1;
-    private List<Owner> owner1;
+    private List<Owner> ownerList;
 
     public owner_item() {
+    }
+
+    public void SetOwnerList(List<Owner> ownerList){
+        this.ownerList = ownerList;
     }
 
     @Nullable
@@ -31,6 +35,5 @@ public class owner_item extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Owner testOwner = new Owner()
     }
 }

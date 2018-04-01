@@ -6,11 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
+import java.util.List;
+
 public class OwnerList extends AppCompatActivity  {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ViewPagerAdapter adapter;
+    public List<Owner> allOwners;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +25,10 @@ public class OwnerList extends AppCompatActivity  {
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         //Add Fragment Here
-        Fragment callOwner = new owner_item();
+        owner_item callOwner = new owner_item();
+        callOwner.SetOwnerList(allOwners);
         adapter.addFragment(callOwner, "All");
+
         Fragment favOwner = new favOwner();
         adapter.addFragment(favOwner, "Starred");
 
